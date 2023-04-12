@@ -1,9 +1,8 @@
-flask_wtf
-wtforms
-sqlalchemy
-datetime
-werkzeug
-flask_login
-wtforms
-flask
+flask_wtf==1.1.1
+wtforms==3.0.1
+sqlalchemy==2.0.6
+datetime==5.1
+werkzeug==2.2.3
+flask_login==0.6.2
+flask==2.2.3
 forms
