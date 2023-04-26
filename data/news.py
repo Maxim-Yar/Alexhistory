@@ -4,10 +4,10 @@ from sqlalchemy import orm
 
 from .db_session import SqlAlchemyBase
 
-
+# создание таблицы с комментариями в БД
 class News(SqlAlchemyBase):
     __tablename__ = 'news'
-
+    # описание полей таблицы
     id = sqlalchemy.Column(sqlalchemy.Integer,
                            primary_key=True, autoincrement=True)
     title = sqlalchemy.Column(sqlalchemy.String, nullable=True)

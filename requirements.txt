@@ -5,4 +5,5 @@ datetime
 werkzeug
 flask_login
 flask
-forms
+json
+requests

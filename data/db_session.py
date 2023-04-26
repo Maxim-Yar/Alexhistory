@@ -6,19 +6,19 @@ import sqlalchemy.ext.declarative as dec
 SqlAlchemyBase = dec.declarative_base()
 __factory = None
 
-
+# создание сессии к БД
 def global_init(db_file):
     global __factory
 
     if __factory:
         return
-
+    # проверка на нахождение файла в БД
     if not db_file or not db_file.strip():
         raise Exception("Необходимо указать файл базы данных.")
-
+    # вывод лог-данных
     conn_str = f'sqlite:///{db_file.strip()}?check_same_thread=False'
     print(f"Подключение к базе данных по адресу {conn_str}")
-
+    # созданик сессии
     engine = sa.create_engine(conn_str, echo=False)
     __factory = orm.sessionmaker(bind=engine)
 

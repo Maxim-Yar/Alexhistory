@@ -826,13 +826,14 @@
             Автор - {{item.user.name}}, Дата написания - {{item.created_date}}
         </div>
         <div>{{item.content}}</div>
-        {% if current_user.is_authenticated and current_user == item.user %}
+        {% if current_user.is_authenticated and (current_user == item.user or 0 == current_user.id) %}
         <div>
             <a href="/news/{{ item.id }}" class="btn btn-warning"> Изменить </a>
             <a href="/news_delete/{{ item.id }}" class="btn btn-danger"> Удалить </a>
         </div>
         {% endif %}
     </div>
+    <br>
     {% endfor %}
 </dl>
 {% endblock %}
